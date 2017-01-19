@@ -1,0 +1,84 @@
+h3 {
+	color:#4BA8FF;
+	font-size: 14pt;
+    margin-bottom: 30px;
+	}
+  .bg-gray {
+	  color: #4BA8FF;
+	  background-color:#383838;
+	  font-size: 15pt;
+  }
+  .iconoRojo{
+	  color:#FC0004;
+  }
+  .navbar {
+      margin-bottom: 0;
+      background-color: #0066FF;
+      z-index: 9999;
+      border: 0;
+      font-size: 13px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #FFF !important;
+	  background-color: #0066FF;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #0075e5 !important;
+      background-color: #FFF !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #FFF !important;
+  }
+  div.fixed { /*barra baja*/
+	bottom: 0;
+	height: 45px;
+	width: 100%;
+	min-width: 500px; /*ancho minimo*/
+    position: fixed;
+	right: 0;
+	margin: auto;
+  }
+  .input { /* barras texto*/
+	  position: relative;
+	  width: 90%;
+	  margin: 12px auto;
+	}
+	.input input {
+	  width: 100%;
+	  padding: 10px 5px 10px 40px;
+	  display: block;
+	  border: 1px solid #1164F2;
+	  border-radius: 6px;
+	  transition: 0.3s ease-out;
+	  color: #001e4e;
+	}
+	.input input:focus {
+	  padding: 10px 5px 10px 10px;
+	  outline: 0;
+	  border-color: #0000FF;
+	}
+   a:link {
+	    color: #7AF821;
+	    background-color: transparent;
+    	text-decoration: none;
+   }
+   a:visited {
+	    color: #7AF821;
+	    background-color: transparent;
+    	text-decoration: none;
+   }
+   a:hover {
+    	color: #4BA8FF;
+	    background-color: transparent;
+    	text-decoration: underline;
+   }
+   a:active {
+		color: #4BA8FF;
+		background-color: transparent;
+		text-decoration: underline;
+   }

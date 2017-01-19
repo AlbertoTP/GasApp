@@ -1,0 +1,24 @@
+Version 1.0
+Hace:
+Login del Usuario
+	* Recibe del Usuario:
+		* Nombre de Usuario
+		* Contraseña
+	
+Registro del Usuario
+	Hace:
+		* Recibe del usuario:
+			*Nombre de usuario, debe ser unico en la BD
+			*Email
+			*Contraseña
+		*Actualiza la BD con la informacion proporcionada por el usuario y la valida, si existe algun error lo indica
+	Comprueba:
+		* Que el nombre sea Unico, debe ser de más de 5 acaracteres alfanumericos y guiones
+		* Que el e-mail tenga un formato unico
+		* Que las contraseñas usen una letra mayuscula, una minuscula y algún número
+			* Encripta las contraseñas, para que solo aparezcan los Hash en la BD
+
+Cambios:
+	* Se tuvo que modificar la BD, tabla usuario, atributo contraseña, para que admitiera hasta 255 caracteres
+
+Nota: La interfaz por ahora solo son paginas en blanco.

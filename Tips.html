@@ -1,0 +1,316 @@
+﻿<?PHP  session_start();
+if(!isset($_SESSION['Uid']))
+      header("Location:IniciarSesion.php");	
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gas App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="css/style0.css">
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a href="Usuario.php" class="navbar-brand">Gas App</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      	<li><a href="Usuario.php">Mapa</a></li>
+        <li><a href="Calculadora.php">Calculadora</a></li>
+        <li><a href="Tips.html">Tips</a></li>
+        <li><a href="Contacto.php">Contacto</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="funciones/Desconectar.php"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+	<div class="row">
+    	<div class="col-xs-7 col-sm-7 col-md-8 col-lg-10">
+	        <h2>Tips</h2>
+			<h4>Con estos trucos vas a poder ahorrar hasta un 20% en combustible</h4>
+        </div>
+    	<div class="col-xs-4 col-sm-4 col-md-4 col-lg-2">
+        	 <i class="fa fa-lightbulb-o logo"></i>
+        </div>
+    </div>
+</div>
+    
+    <!-- desplazamientos cortos -->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div id="collapse1" class="panel-collapse collapse">
+          <div class="panel-body">
+          	<div id="carr1" class="container-fluid">
+                <h2><i class="fa fa-building-o logo-small"></i> Lo recomendable para cortos desplazamientos:</h2>
+                <div id="myCarousel1" class="carousel slide text-center" data-ride="carousel" data-interval="100000">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel1" data-slide-to="1"></li>
+                  <li data-target="#myCarousel1" data-slide-to="2"></li>
+                  <li data-target="#myCarousel1" data-slide-to="3"></li>
+		  <li data-target="#myCarousel1" data-slide-to="4"></li>
+                </ol>
+            
+                <!-- Slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <h4>Apague el motor si va a estar parado más de un minuto.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Intente no realizar movimientos bruscos, como acelerones o frenazos.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Utilice siempre que pueda la velocidad más alta (considerando el límite de velocidad). En primera deberían ser unos 2 segundos ya que es la velocidad que más consume.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>No use el aire acondicionado al menos que este a más de 90 km.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>Maneje a la velocidad límite, debido a que los semáforos están sincronizados con el límite de velocidad. Si vas más rápido de lo necesario, estarás deteniéndote y arrancando nuevamente, lo que es malo para el ahorro de la gasolina.</h4>
+                  </div>
+                </div>
+            
+                <!-- Controles -->
+                <a class="left carousel-control" href="#myCarousel1" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel1" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse1"><i class="fa fa-building-o logo-small2"></i> En desplazamientos cortos por ciudad:</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    
+    <!-- desplazamientos largos -->
+     <div class="panel-group">
+      <div class="panel panel-default">
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+          	<div id="carr2" class="container-fluid">
+                <h2><i class="fa fa-road logo-small"></i> Lo recomendable para largos desplazamientos:</h2>
+                <div id="myCarousel2" class="carousel slide text-center" data-ride="carousel" data-interval="100000">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel2" data-slide-to="1"></li>
+                  <li data-target="#myCarousel2" data-slide-to="2"></li>
+                  <li data-target="#myCarousel2" data-slide-to="3"></li>
+                  <li data-target="#myCarousel2" data-slide-to="4"></li>
+                  <li data-target="#myCarousel2" data-slide-to="5"></li>
+                  <li data-target="#myCarousel2" data-slide-to="6"></li>
+                  <li data-target="#myCarousel2" data-slide-to="7"></li>
+		  <li data-target="#myCarousel2" data-slide-to="8"></li>
+                </ol>
+            
+                <!-- Slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <h4>Presión en los neumáticos, cuida mucho que tengan la presión correcta. Si están bajos aumenta considerablemente el consumo del combustible. Puedes optar por neumáticos ecológicos que consumen menos.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Acelera de forma gradual, e intenta mantener siempre una velocidad de 90km a 120 km.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Lo ideal es siempre tener entre 1500 y 2500 revoluciones.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Use el aire acondicionado a más de 90 km en vez de las ventanillas abiertas.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Cuidado con el exceso de aire acondicionado, lo ideal es 22°c.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Saque los objetos innecesarios para el viaje, el peso y la resistencia en aerodinámica hace aumentar el gasto de combustible.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Revise el coche, si está en malas condiciones o en mal estado, el consumo se dobla y contaminamos mucho más.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Frene suavemente, cambiando las velocidades lo más tarde posible y siempre que puedas detén el coche sin cambiar la velocidad.</h4>
+                  </div>
+		   <div class="item">
+                    <h4>Elimine el exceso de peso, la sobrecarga del vehículo puede aumentar más de 4% de consumo.</h4>
+                  </div>
+                </div>
+            
+                <!-- Controles -->
+                <a class="left carousel-control" href="#myCarousel2" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel2" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse2"><i class="fa fa-road logo-small2"></i> Para largos desplazamientos:</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    
+    <!-- desplazamiento general -->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+          	<div id="carr3" class="container-fluid">
+                <h2><i class="fa fa-tachometer logo-small"></i> Lo recomendable para cualquier desplazamiento:</h2>
+                <div id="myCarousel3" class="carousel slide text-center" data-ride="carousel" data-interval="100000">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel3" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel3" data-slide-to="1"></li>
+		  <li data-target="#myCarousel3" data-slide-to="2"></li>
+		  <li data-target="#myCarousel3" data-slide-to="3"></li>
+		  <li data-target="#myCarousel3" data-slide-to="4"></li>
+		  <li data-target="#myCarousel3" data-slide-to="5"></li>
+		  <li data-target="#myCarousel3" data-slide-to="6"></li>
+		  <li data-target="#myCarousel3" data-slide-to="7"></li>
+		  <li data-target="#myCarousel3" data-slide-to="8"></li>
+                </ol>
+            
+                <!-- Slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <h4>Busca el camino más corto y/o con menos trafico, y use los mapas/GPS para no perderte.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>A menos de 90 km, mejor las ventanillas bajadas que el aire acondicionado.</h4>
+                  </div>
+	          <div class="item">
+                    <h4>Evite conducir cerca de otro auto y pisar constantemente el freno, esta aceleración y frenado constante consume más combustible. Conduzca de manera constante y a una distancia segura.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>Acelere lentamente, si aumenta rápidamente la velocidad después de detenerte quemas combustible adicional y aumentas el desgaste de los neumáticos.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>Estaciónate en la sombra, mientras más frío esté tu auto, menos gasolina se evaporará del tanque.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>Afine el motor y con su servicio general como filtros de aire y aceite, mejorarán el consumo de combustible.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>Utilize <a data-toggle="tooltip" title="Ahorradores de combustible para autos">aditamentos para gasolina</a>, permiten que el combustible fluya sin problemas dentro del motor y aumente su eficiencia.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>Aprovecha las bajadas, Los descensos te permiten ahorrar el consumo de gasolina. Aprovecha la inercia para el cambio de velocidades circulando a bajas revoluciones. En las subidas, retrase el cambio de velocidad, incrementando la presión sobre el acelerador, aunque nunca pisando a fondo.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>Usa el <a data-toggle="tooltip" title="Porcentaje de octano que contiene la gasolina">octanaje</a> correcto, el vehículo funciona más eficientemente con el octanaje indicado en la guía del propietario.</h4>
+                  </div>
+                </div>
+            
+                <!-- Controles -->
+                <a class="left carousel-control" href="#myCarousel3" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel3" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse3"><i class="fa fa-tachometer logo-small2"></i> Cualquier desplazamiento:</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+    
+    <!-- llenar el tanque -->
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div id="collapse4" class="panel-collapse collapse">
+          <div class="panel-body">
+          	<div id="carr4" class="container-fluid">
+				<h2><i class="fa fa-tint logo-small"></i> Lo recomendable para la carga de combustible:</h2>
+                <div id="myCarousel4" class="carousel slide text-center" data-ride="carousel" data-interval="100000">
+                <!-- Indicadores -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel4" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel4" data-slide-to="1"></li>
+                  <li data-target="#myCarousel4" data-slide-to="2"></li>
+		  <li data-target="#myCarousel4" data-slide-to="3"></li>
+                </ol>
+            
+                <!-- Slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <h4>Busque las gasolineras más baratas y con mejor reputación. Elígelas mientras no este lejos.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Eche gasolina por las mañanas o en bajas temperaturas, la gasolina está más densa y supone mayor cantidad al cargar.</h4>
+                  </div>
+                  <div class="item">
+                    <h4>Llene el tanque antes de que esté por la mitad, porque así no tiene tanto aire y evita la evaporación del combustible. Gasta mucho menos que siempre medio vacío o en reserva.</h4>
+                  </div>
+		  <div class="item">
+                    <h4>No llene el tanque cuando estén rellenando la gasolinera, se remueve el combustible restante junto con los sedimentos del fondo, con lo que corremos el riesgo de echar un combustible sucio.</h4>
+                  </div>
+                </div>
+            
+                <!-- Controles -->
+                <a class="left carousel-control" href="#myCarousel4" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel4" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+		<div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#collapse4"><i class="fa fa-tint logo-small2"></i> Trucos en la carga de combustible:</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+</html>
