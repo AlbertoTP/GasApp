@@ -85,7 +85,11 @@ if(isset($_POST["Enviar"])) {
         <ul class="dropdown-menu">
           <li><a href="admin2.php"><span class="glyphicon glyphicon-th-list"></span> Ver todas</a></li>
           <li><a href="admin3.php"><span class="glyphicon glyphicon-repeat"></span> Actualizar Tarifas</a></li>
+<<<<<<< HEAD
+          <li><a href="admin4.php"><span class="glyphicon glyphicon-search"></span> Buscar Gasolinera</a></li>
+=======
           <li><a href="admin4.php"><span class="glyphicon glyphicon glyphicon-search"></span> Buscar Gasolinera</a></li>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
           <li><a href="admin5.php"><span class="glyphicon glyphicon-plus"></span> Añadir nueva</a></li>
         </ul>
       </li>
@@ -96,7 +100,11 @@ if(isset($_POST["Enviar"])) {
 </nav>
 
 <div class="container-fluid bg-gray">
+<<<<<<< HEAD
+<h2><span class="glyphicon glyphicon-search logo-small"></span> Buscar Gasolinera:</h2>
+=======
 <h2><span class="glyphicon glyphicon-plus logo-small"></span> Añadir nueva Gasolinera:</h2>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 <h3>
 <fieldset>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
