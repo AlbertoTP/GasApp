@@ -3,8 +3,13 @@
 function Conectarse() 
 { 
 	/*Creo la conexion con la BD para regresar el link*/
+<<<<<<< HEAD
+   //if (!($link = mysqli_connect("localhost", "root", "", "gasapp"))) 
+   if (!($link = mysqli_connect("mysql.hostinger.mx", "u265111954_root", "GasApp2016.", "u265111954_gasap")))
+=======
 
    if (!($link = mysqli_connect("localhost", "root", "", "gasapp"))) 
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
    { 
       echo "Error conectando a la base de datos."; 
       exit(); 

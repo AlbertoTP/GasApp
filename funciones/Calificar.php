@@ -42,6 +42,21 @@
 			return "img/gas0.png";
 		}
 	}
+<<<<<<< HEAD
+	//revisa en la BD si la gasolinera existe
+	function existeGasolinera($idgas){
+		require_once("conexion.php");
+		$link = Conectarse();
+      	$Consulta = "SELECT * FROM gasolinera WHERE IDGasolinera='$idgas'";
+		$res=mysqli_query($link, $Consulta) or die (mysqli_error());
+		$res = mysqli_fetch_array($res);
+		if ($res===NULL)
+			return true;
+		else
+			return false;
+	}
+=======
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 	//muestra todos los comentarios de la gasolinera seleccionada
 	function verTodosC($gas){
 		require_once("conexion.php");
@@ -61,6 +76,47 @@
 		$datetime1=explode("-",$datetime0[0]);
 		return $datetime1;
 	}
+<<<<<<< HEAD
+	//Separa la hora de la fecha
+	function gethora($fecha){
+		$datetime0=explode(" ",$fecha);
+		$datetime1=explode(":",$datetime0[1]);
+		return $datetime1;
+	}
+	//verifica que el usuario no comente seguido solo 1 vez por hora y maximo 5 veces por dia
+	function puedeComentar($idu){
+		$time = time();
+		//$newDate = date('Y-m-d',$time)." ".date("H:i:s");
+                $date = date_create('00:00:00');
+                $newDate = date_format($date, 'Y-m-d H:i:s');
+		//echo "newfecha|",$newDate;
+		require_once("conexion.php");
+      	$link = Conectarse();
+      	$Consulta ="SELECT escribe_calificacion.dia_hora FROM escribe_calificacion WHERE dia_hora>='$newDate' AND IDUsuario='$idu' ORDER BY dia_hora DESC";
+		$res=mysqli_query($link, $Consulta) or die (mysqli_error());
+		$res1=mysqli_query($link, $Consulta) or die (mysqli_error());
+		$res = mysqli_fetch_array($res);
+		if ($res===Null)
+			return true;
+		elseif (mysqli_num_rows($res1)<5){
+			//hora del ultimo comentario
+			$hora = gethora($res[0]);
+			//hora actual
+			$time = time();
+			$horaActual=date('H:i:s',$time);
+			$horaActual1=explode(":",$horaActual);
+			//tiene que tener por lo menos una hora mas
+                        //echo "hora actual:",$horaActual1," HoraComment: ",$hora[0];
+			if ($horaActual1[0]>$hora[0])
+				return true;
+			else
+				return false;
+		}
+		else
+			return false;
+	}
+=======
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 	//Datos de la gasolinera elegida
 	function datos($gas){
 		require_once("conexion.php");
@@ -84,13 +140,21 @@
 		$Consulta="INSERT INTO escribe_calificacion (idEC,IDGasolinera,IDUsuario,comentario,calificacionUsuario,dia_hora) VALUES (0,'$idgas', '$uid', '$com', '$cal', '$tiempo')";
 		if(mysqli_query($link,$Consulta)){
 			echo "Datos enviados";
+<<<<<<< HEAD
+			header("Location:gasolinera.php?gas=".base64_encode(base64_encode(base64_encode($idgas))));
+=======
 			header("Location:gasolinera.php?gas=".urlencode($idgas));
 exit; 
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 		}
 		else{
 			printf("Error: %s\n", mysqli_error($link));
 			echo "No se enviaron datos";
+<<<<<<< HEAD
+			header("Location:calificarGasolinera.php");
+=======
 			header("Location:calificarGasolinera.php?gas=".urlencode($idgas));
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 		}
 	}
 	
