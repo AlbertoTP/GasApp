@@ -4,23 +4,39 @@
 	}
 h1{
 	font-family: 'Caviar Dreams';
+<<<<<<< HEAD
+	font-size: 26pt;
+=======
 	font-size: 28pt;
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 	}
 h2 {
 	color:#1164F2;
 	/*color: #303030;*/
 	font-family: 'Caviar Dreams';
+<<<<<<< HEAD
+	font-size: 24pt;
+=======
 	font-size: 26pt;
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
     font-weight: 600;
     margin-bottom: 30px;
 	}
 h3{
 	font-family: 'Caviar Dreams';
+<<<<<<< HEAD
+	font-size: 21pt;
+	}
+h4{
+	font-family: 'Caviar Dreams';
+	font-size: 19px;
+=======
 	font-size: 23pt;
 	}
 h4{
 	font-family: 'Caviar Dreams';
 	font-size: 20px;
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 	line-height: 1.375em;
     color: #303030;
     font-weight: 400;
