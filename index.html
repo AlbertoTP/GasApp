@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-  <title>Gas App</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
-  <link rel="stylesheet" href="css/style0.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Gas App</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/style0.css">
+
 </head>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -20,7 +28,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#myPage">Gas App</a>
     </div>
@@ -38,6 +46,20 @@
     </div>
   </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+	<div class="modal-dialog modal-lg">
+    	<!-- Modal content-->
+               	<p align="right"><button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button><br></p>
+      	 <video width="100%" height="auto" controls autoplay>
+		  <source src="vid/GasApp.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+		</video> 
+    </div>
+</div>
+<!-- Fin Modal -->
+
 <!-- Inicio -->
 <div class="jumbotron text-center">
 	<div class="centrado-porcentual">
@@ -210,18 +232,31 @@ A continuación te presentamos algunas noticias sobre el tema:<br></h4>
       <span class="sr-only">Next</span>
     </a>
   </div>
+
+  <br />
+  <!-- Modal -->
+	<div class="modal fade" id="videodemo" role="dialog">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+					<p align="right"><button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></button><br></p>
+			 <video width="100%" height="auto" controls>
+			  <source src="vid/demo.mp4" type="video/mp4">
+			  Your browser does not support the video tag.
+			</video> 
+		</div>
+	</div>
+	<!-- Fin Modal -->
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#videodemo">Ver video de muestra</button>
 </div>
 
 <!-- proximamente -->
 <div id="proximamente" class="container-fluid">
 	<div class="row">
     	<div class="col-sm-8 col-md-8 col-lg-10">
-        	<h2>Próximamente</h2><br>
-            <img class="img-responsive" src="img/P_googlePlay.png" alt="Google Play">
+        	<h2>También disponible en:</h2><br>
+            <a href="http://gassapp.esy.es/"><img class="img-responsive" src="img/icon_android.png" alt="Android"></a>
             <!--<img class="img-responsive" src="img/P_appStore.png" alt="Google Play">-->
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-2 slideanim">
-            <i class="material-icons logo slideanim">phone_android</i>
         </div>
     </div>
 </div>
@@ -270,9 +305,14 @@ A continuación te presentamos algunas noticias sobre el tema:<br></h4>
 	</footer>
   </div>
  <div class="container-fluid text-right bg-gray">
- 	<h6><i>Derechos Reservados (c) <a href="Equipo.html">Equipo Desarrollador de Gas App</a> 2016</i></h6>
+ 	<h6><i>Derechos Reservados (c) <a href="Equipo.html">Equipo Desarrollador de Gas App</a> 2017</i></h6>
  </div>
- 
+
+ <script> <!-- Modal -->
+ $(document).ready(function(){
+         $("#myModal").modal("show");
+ });
+ </script>
 <script src="js/scroll.js"></script>
 
 </body>
