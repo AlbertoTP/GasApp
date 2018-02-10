@@ -32,8 +32,13 @@ if(!isset($_SESSION['Uid']))
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
       	<li><a href="Usuario.php">Mapa</a></li>
+<<<<<<< HEAD
+        <li><a href="Autos.php">Calculadora</a></li>
+        <li><a href="Tips.php">Tips</a></li>
+=======
         <li><a href="Calculadora.php">Calculadora</a></li>
         <li><a href="Tips.html">Tips</a></li>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
         <li><a href="Contacto.php">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

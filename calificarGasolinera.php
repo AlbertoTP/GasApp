@@ -1,6 +1,14 @@
 <?PHP  session_start();
 if(!isset($_SESSION['Uid']))
       header("Location:IniciarSesion.php");
+<<<<<<< HEAD
+else{
+	require_once("funciones/Calificar.php");
+	if (!puedeComentar($_SESSION['Uid']))
+		header("Location:Usuario.php");
+}
+=======
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 ?>
 <?php
 		  $comentario="";
@@ -9,8 +17,15 @@ if(!isset($_SESSION['Uid']))
 		  	if ($_SERVER["REQUEST_METHOD"] == "POST"){
 				$comentario=$_POST['comentario'];
 				$calificacion=$_POST['calificacion'];
+<<<<<<< HEAD
+				if (!puedeComentar($_SESSION['Uid']))
+					header("Location:Usuario.php");
+				else
+					calificar($_SESSION["IDGas"],$_SESSION['Uid'],$comentario,$calificacion);
+=======
 				require_once("funciones/Calificar.php");
 				calificar($_SESSION["IDGas"],$_SESSION['Uid'],$comentario,$calificacion);
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 			}
 ?>
 <!DOCTYPE html>
@@ -91,8 +106,13 @@ if(!isset($_SESSION['Uid']))
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
       	<li><a href="Usuario.php">Mapa</a></li>
+<<<<<<< HEAD
+        <li><a href="Autos.php">Calculadora</a></li>
+        <li><a href="Tips.php">Tips</a></li>
+=======
         <li><a href="Calculadora.php">Calculadora</a></li>
         <li><a href="Tips.html">Tips</a></li>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
         <li><a href="Contacto.php">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -112,6 +132,17 @@ if(!isset($_SESSION['Uid']))
         <br>
         	<h5>
         	<input type="radio" id="radio1" name="calificacion" value="1" required>
+<<<<<<< HEAD
+            	<label for="radio1"><img width="30px" src="img/cal1.png"> Malo</label><br class="visible-xs visible-sm">
+            <input type="radio" id="radio2" name="calificacion" value="2">
+            	<label for="radio2"><img width="30px" src="img/cal2.png"> Deficiente</label><br class="visible-xs visible-sm">
+            <input type="radio" id="radio3" name="calificacion" value="3">
+            	<label for="radio3"><img width="30px" src="img/cal3.png"> Regular</label><br class="visible-xs visible-sm">
+            <input type="radio" id="radio4" name="calificacion" value="4">
+            	<label for="radio4"><img width="30px" src="img/cal4.png"> Muy bueno </label><br class="visible-xs visible-sm">
+            <input type="radio" id="radio5" name="calificacion" value="5">
+            	<label for="radio5"><img width="30px" src="img/cal5.png"> Excelente</label>
+=======
             	<label for="radio1"><img width="35px" src="img/cal1.png"> Malo</label>
             <input type="radio" id="radio2" name="calificacion" value="2">
             	<label for="radio2"><img width="35px" src="img/cal2.png"> Deficiente</label>
@@ -121,6 +152,7 @@ if(!isset($_SESSION['Uid']))
             	<label for="radio4"><img width="35px" src="img/cal4.png"> Muy bueno </label>
             <input type="radio" id="radio5" name="calificacion" value="5">
             	<label for="radio5"><img width="35px" src="img/cal5.png"> Excelente</label>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
             </h5>
          </div>
     	 <div class="form-group cal">

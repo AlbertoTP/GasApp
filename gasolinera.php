@@ -1,11 +1,29 @@
 <?PHP  session_start();
 if(!isset($_SESSION['Uid']))
+<<<<<<< HEAD
+      header("Location:IniciarSesion.php");
+require_once("funciones/Calificar.php");
+if ($_GET['gas']==Null){
+	header("Location:Usuario.php");
+	}
+else{
+	$gas=$_GET['gas'];
+	$gas=base64_decode(base64_decode(base64_decode($gas)));
+	if (!existeGasolinera($gas))
+		$_SESSION["IDGas"] = $gas;
+	else
+		header("Location:Usuario.php");
+}
+?>
+<?php
+=======
       header("Location:IniciarSesion.php");	
 $_SESSION["IDGas"] = $_GET['gas'];
 $gas=$_GET['gas'];
 ?>
 <?php
 require_once("funciones/Calificar.php");
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 $prom=promedioGasolinera($gas);
 ?>
 <!DOCTYPE html>
@@ -37,7 +55,10 @@ $prom=promedioGasolinera($gas);
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -51,8 +72,13 @@ $prom=promedioGasolinera($gas);
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
       	<li><a href="Usuario.php">Mapa</a></li>
+<<<<<<< HEAD
+        <li><a href="Autos.php">Calculadora</a></li>
+        <li><a href="Tips.php">Tips</a></li>
+=======
         <li><a href="Calculadora.php">Calculadora</a></li>
         <li><a href="Tips.html">Tips</a></li>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
         <li><a href="Contacto.php">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -61,15 +87,29 @@ $prom=promedioGasolinera($gas);
     </div>
   </div>
 </nav>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 <!-- Inicio del contenido -->
 <div class="container-fluid">
 	<div class="row">
     	<!-- Boton Califica -->
     	<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 bg-blue">
         	<center>
+<<<<<<< HEAD
+            <?php require_once("funciones/Calificar.php");
+			if (puedeComentar($_SESSION['Uid'])){
+        	echo '<a class="btn btn-primary btn-lg visible-lg visible-md" href="calificarGasolinera.php"><span class="glyphicon glyphicon-star-empty"></span> Calificar</a>';
+            echo '<a class="btn btn-primary visible-xs visible-sm" href="calificarGasolinera.php"><span class="glyphicon glyphicon-star-empty"></span> Calificar</a>';
+            } else{
+            echo '<a class="btn btn-primary btn-lg visible-lg visible-md disabled"><span class="glyphicon glyphicon-star-empty"></span> Calificar</a>';
+            echo '<a class="btn btn-primary visible-xs visible-sm disabled"><span class="glyphicon glyphicon-star-empty"></span> Calificar</a>';
+            } ?>
+=======
         	<a class="btn btn-primary btn-lg visible-lg visible-md" href="calificarGasolinera.php?gas=<?php echo $gas; ?>"><span class="glyphicon glyphicon-star-empty"></span> Calificar</a>
             <a class="btn btn-primary visible-xs visible-sm" href="calificarGasolinera.php?gas=<?php echo $gas; ?>"><span class="glyphicon glyphicon-star-empty"></span> Calificar</a>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
             </center>
         </div>
         <!-- logo solo md y lg -->

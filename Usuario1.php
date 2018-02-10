@@ -36,8 +36,13 @@ if(!isset($_SESSION['Uid']))
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
       	<li><a href="Usuario.php">Mapa</a></li>
+<<<<<<< HEAD
+        <li><a href="Autos.php">Calculadora</a></li>
+        <li><a href="Tips.php">Tips</a></li>
+=======
         <li><a href="Calculadora.php">Calculadora</a></li>
         <li><a href="Tips.html">Tips</a></li>
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
         <li><a href="Contacto.php">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -99,7 +104,11 @@ while($row = mysqli_fetch_array($consulta)){
 	echo '],name:"';
 	echo $row["NGasolinera"];
 	echo '",info:"gasolinera.php?gas=';
+<<<<<<< HEAD
+	echo base64_encode(base64_encode(base64_encode($row["IDGasolinera"])));
+=======
 	echo $row["IDGasolinera"];
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 	echo '"},';
 }
 ?>
@@ -112,6 +121,11 @@ function showPosition(position)
   {
   lat=position.coords.latitude;
   lon=position.coords.longitude;
+<<<<<<< HEAD
+  //lat=28.999684;
+  //lon=-98.19421772;
+=======
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
   latlon=new google.maps.LatLng(lat, lon)
   mapholder=document.getElementById('mapholder')
   mapholder.style.height='91%';
@@ -210,7 +224,36 @@ function showPosition(position)
 			        }
 			        total = total / 1000;
 				ttotal = ttotal / 60;
+<<<<<<< HEAD
+				if (total >= 1.0) {
+					if (ttotal < 60.0){
+                                		infoD="<br>Esta a "+total.toFixed(2)+" km. de su lugar actual.<br>Llega aproximadamente en "+ttotal.toFixed(0)+" minutos"
+					}
+					else{
+						var tempMin=0;
+						tempMin=ttotal%60.0;
+						ttotal=ttotal/60.0;
+						infoD="<br>Esta a "+total.toFixed(2)+" km. de su lugar actual.<br>Llega aproximadamente en "+ttotal.toFixed(0)+" horas "+tempMin.toFixed(0)+" minutos"
+					}
+				}
+				else{
+					total = total * 1000;
+					if (ttotal >= 1.0){
+						infoD="<br>Esta a "+total.toFixed(2)+" m. de su lugar actual.<br>Llega aproximadamente en "+ttotal.toFixed(0)+" minutos"
+					}
+					else{
+						if(ttotal == 0.0){
+							infoD="<br>Ha llegado a su destino"
+						}
+						else{
+							ttotal=ttotal*60;
+							infoD="<br>Esta a "+total.toFixed(2)+" m. de su lugar actual.<br>Llega aproximadamente en "+ttotal.toFixed(0)+" segundos"
+						}
+					}
+				}
+=======
                                 infoD="<br>Esta a "+total.toFixed(2)+" km. de su lugar actual.<br>Llega aproximadamente en "+ttotal.toFixed(0)+" minutos"
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
                                 info="<a href="+gasList[i].info+">Consultar informacion</a>"
 		                infoWnd.setContent("<strong>"+gasList[i].name+"</title><br>"+info+infoD); 
 		                infoWnd.open(map, markerI);
@@ -225,12 +268,21 @@ function showPosition(position)
   }
 	
   }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 function showError(error)
   {
   switch(error.code) 
     {
     case error.PERMISSION_DENIED:
+<<<<<<< HEAD
+      //x.innerHTML="Denegada la peticion de Geolocalización en el navegador."
+      sinGeo();
+=======
       x.innerHTML="Denegada la peticion de Geolocalización en el navegador."
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
       break;
     case error.POSITION_UNAVAILABLE:
       x.innerHTML="La información de la localización no esta disponible."
@@ -244,6 +296,125 @@ function showError(error)
     }
   }}
 
+<<<<<<< HEAD
+function sinGeo(){
+  var gasList = [
+<?php
+$consulta=BDaMaps();
+while($row = mysqli_fetch_array($consulta)){
+	echo '{"latlng":[';
+	echo $row["Latitud"],",",$row["Longitud"];
+	echo '],name:"';
+	echo $row["NGasolinera"];
+	echo '",info:"gasolinera.php?gas=';
+	echo base64_encode(base64_encode(base64_encode($row["IDGasolinera"])));
+	echo '"},';
+}
+?>
+];
+  lat=18.99999994;
+  lon=-98.19992872;
+  latlon=new google.maps.LatLng(lat, lon)
+  mapholder=document.getElementById('mapholder')
+  mapholder.style.height='91%';
+  mapholder.style.width='100%';
+  var myOptions={
+  center:latlon,zoom:14,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  mapTypeControl:false,
+  navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+  };
+  var map=new google.maps.Map(document.getElementById("mapholder"),myOptions);
+  var marker=new google.maps.Marker({position:latlon,map:map,icon: "img/pos.png"});
+  var gas, i, latlng;
+
+  var directionsService = new google.maps.DirectionsService;
+  var directionsDisplay = new google.maps.DirectionsRenderer({
+          draggable: true,
+          map: map,
+          panel: document.getElementById('right-panel')
+        });
+  directionsDisplay.setOptions( { suppressMarkers: true } );
+
+  var tempLatLng={lat: lat, lng: lon};
+  infoCliente="Diculpe las molestias, para disfrutar todas las caracteristicas su navegador debe ser Firefox"
+  
+  
+
+  //Creates a infowindow object.
+  infoWnd = new google.maps.InfoWindow();
+
+   //var title=":v"
+   google.maps.event.addListener(marker, "click", function(){
+      infoWnd.setContent("<strong>"+infoCliente+"</title>");
+      infoWnd.open(map, marker);
+    });
+
+   var gas, i, latlng, info, infoD, total, ttotal;
+  var markerI = []<!--[gasList.length];-->
+  
+  //directionsDisplay.addListener('directions_changed', function() {
+  //        computeTotalDistance(directionsDisplay.getDirections());
+  //      });
+  //<?php $indice=0;?>;
+  var HP="<?php echo $prom;?>";
+  //alert(HP)
+  temp=""
+  var iconos=[];
+  var nI=0;
+  for (j in HP){
+	if (HP[j] != ' '){
+		temp=temp+HP[j];
+        }
+	else{
+		//alert(temp)
+		iconos[nI]=temp;
+		nI=nI+1;
+		temp=""
+	}
+  }
+  for (i in gasList) {
+    //Creates a marker
+    
+    gas = gasList[i];
+    latlng = new google.maps.LatLng(gas.latlng[0], gas.latlng[1]);
+    markerI = new google.maps.Marker({
+      position : latlng,
+      map : map,
+      title : gas.name,
+      //icon: "img/gas0.png"
+      icon: iconos[i]
+     });
+    google.maps.event.addListener(markerI, 'click', (function(markerI, i) {
+          return function() {
+          //  displayRoute(lat+","+lon, gasList[i].latlng[0]+","+gasList[i].latlng[1], directionsService,directionsDisplay);
+          //  total = 0;
+	  //  ttotal = 0;
+          //  infoD=" ";
+          //  var request = {
+    	// 	origin:lat+","+lon,
+	//	        destination:gasList[i].latlng[0]+","+gasList[i].latlng[1],
+	//	        travelMode: google.maps.TravelMode.DRIVING
+	  //    };
+            //  directionsService.route(request, function(result, status) {
+              //    if (status == google.maps.DirectionsStatus.OK) {
+				
+				infoD="<br>Para saber a cuantos km. esta favor de usar Firefox"
+                                info="<a href="+gasList[i].info+">Consultar informacion</a>"
+		                infoWnd.setContent("<strong>"+gasList[i].name+"</title><br>"+info+infoD); 
+		                infoWnd.open(map, markerI);
+			        
+                //     }
+              //});
+	      
+	    
+          }
+        })(markerI, i));
+  }
+}
+
+=======
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
       function displayRoute(origin, destination, service, display) {
         service.route({
           origin: origin,
@@ -274,6 +445,10 @@ function showError(error)
     
 google.maps.event.addDomListener(window, 'load', cargarmap);
 </script>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 7fc8f5c22cfebcb17fbd67108e2f06f19dd9b921
 <script> <!-- Modal -->
 $(document).ready(function(){
         $("#myModal").modal("show");
